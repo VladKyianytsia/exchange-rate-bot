@@ -1,2 +1,4 @@
 .idea
 .venv
+exchange_rate.db
+__pycache__
