@@ -24,6 +24,6 @@ def generate_exchange_rates_xlsx():
         "Date": [rate.date.strftime('%d.%m.%Y %H:%M:%S') for rate in rates],
     }
     df = pd.DataFrame(data)
-    file_name = "../exchange_rates.xlsx"
-    df.to_excel(file_name, index=False)
-    return file_name
+    file_path = "../exchange_rates.xlsx"
+    df.to_excel(file_path, index=False)
+    return file_path

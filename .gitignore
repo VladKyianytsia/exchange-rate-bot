@@ -2,3 +2,5 @@
 .venv
 exchange_rate.db
 __pycache__
+.env
+exchange_rates.xlsx
