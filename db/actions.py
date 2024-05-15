@@ -2,12 +2,11 @@ import pandas as pd
 
 from db.engine import SessionLocal
 from db.models import ExchangeRate
-from parser.parser import get_exchange_rate
 
 
-def add_exchange_rate_to_db() -> None:
+def add_exchange_rate_to_db(rate: float) -> None:
     session = SessionLocal()
-    new_rate = ExchangeRate(exchange_rate=get_exchange_rate())
+    new_rate = ExchangeRate(exchange_rate=rate)
     session.add(new_rate)
     session.commit()
     session.close()

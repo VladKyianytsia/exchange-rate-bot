@@ -1,6 +1,9 @@
 from sqlalchemy import Column, Integer, DateTime, Float, func
+from sqlalchemy.orm import declarative_base
 
-from db.engine import Base, engine
+from db.engine import engine
+
+Base = declarative_base()
 
 
 class ExchangeRate(Base):
@@ -11,4 +14,9 @@ class ExchangeRate(Base):
     exchange_rate = Column(Float)
 
 
-Base.metadata.create_all(engine)
+def db_init() -> None:
+    Base.metadata.create_all(engine)
+
+
+if __name__ == "__main__":
+    db_init()
