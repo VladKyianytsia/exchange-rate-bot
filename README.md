@@ -36,12 +36,16 @@
    ```bash
    python -m bot.bot
    ```
-7. Run Celery worker in terminal
+7. Run Redis in Docker
+   ```bash
+   docker run -d -p 6379:6379 redis
+   ```
+8. Run Celery worker in terminal
    ```bash
    celery -A parser.parser worker --loglevel=info -P solo
    ```
-8. Run Celery periodic task
+9. Run Celery periodic task
    ```bash
    celery -A parser.parser beat --loglevel=info
    ```
-9. Finally, after some time send /get_exchange_rate to your Telegram bot to receive .xlsx file with exchange rates data
+10. Finally, after some time send /get_exchange_rate to your Telegram bot to receive .xlsx file with exchange rates data
