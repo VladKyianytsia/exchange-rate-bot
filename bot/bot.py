@@ -1,5 +1,4 @@
 import asyncio
-import logging
 import os
 
 from aiogram import Bot, Dispatcher, types
@@ -11,7 +10,6 @@ from db.actions import generate_exchange_rates_xlsx
 
 load_dotenv()
 
-logging.basicConfig(level=logging.INFO)
 
 bot = Bot(token=os.getenv("BOT_TOKEN"))
 
